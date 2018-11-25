@@ -3,20 +3,17 @@
 
   <mat-toolbar class="tool">
 
-    <div fxFlex.lg="5%" fxFlex.md="5%" fxFlex.sm="10%" fxFlex.xs="15%">
+    <div fxFlex.lg="5%" fxFlex.md="5%" fxFlex.sm="10%" fxFlex.xs="15%" fxFlex.xl="5">
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
       <mat-icon style="color:black" aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
   </div>
 
-
-
-    <div *ngIf="clickOnSearch" fxFlex.lg="10" fxFlex.md="10" fxFlex.sm="20" fxFlex.xs="30" >{{name}}</div>
+    <div class="hider" *ngIf="clickOnSearch" fxFlex.lg="10" fxFlex.md="10" fxFlex.sm="20" fxFlex.xs="30" fxFlex.xl="25">{{name}}</div>
 
     <!-- ********************* Search Bar ************************* -->
     <div fxFlex.lg="75%" fxFlex.md="40%" fxFlex.sm="50%" class="searchBar" fxLayout="row" fxShow fxHide.xs="true">
-      <!-- <div fxFlex="100%"> -->
-        <div fxFlex.lg="5%" fxFlex.md="10%" fxFlex.sm="10" style="justify-content: center">
+        <div fxFlex.lg="5%" fxFlex.md="10%" fxFlex.sm="10" fxFlex.xl="10" style="justify-content: center" >
           <i class="material-icons searchIcon">search </i></div>
         <div fxFlex.lg="90%" fxFlex.md="90%" fxFlex.sm="90" >
           <input class="search" type="input" [(ngModel)]="globalSearch"
@@ -24,54 +21,39 @@
         </div>
       <!-- </div> -->
     </div>
-    <div fxFlex.xs="30%"></div>
+    <div fxFlex.xs="30%" fxFlex.xl="10%"></div>
     <!------------------------------end of search bar ---------------------------->
     <!---------------------------------Small search bar ---------------------------->
 
-    <div class="searchBar" fxHide fxHide.lg="true" fxShow.xs="true">
+    <div class="searchBar" fxHide fxHide.lg="true" fxShow.xs="true" fxHide.xl="true">
       <div fxFlex="100%">
         <div *ngIf="show">
           <input fxFlex.xs="90%" class="searchSmallBarTry" type="input" [(ngModel)]="globalSearch" (keydown)="keySearch(); onEnterIcon($event) ; headerFundoo()"
             (click)="navigate() " placeholder="search">
         </div>
-        <div fxFlex.xs="10%" (click)="show = !show ;clickOnSearch = !clickOnSearch">
+        <div fxFlex.xs="10%" (click)="show = !show ;clickOnSearch = !clickOnSearch" fxHide.md="true">
           <i (click)="navigate()" class="material-icons smallerSearchIcon">search </i>
         </div>
 
       </div>
     </div>
     <!-----------------------------end of small search bar ------------------------------->
-    <!-- <div fxFlex.lg="30%" fxFlex.md="30%" fxFlex.xs="5%"></div> -->
-    <!----------------------------------------------------------------------->
-    <div fxFlex.lg="10%" fxFlex.md="13%" fxFlex.sm="10%" fxFlex.xs="30%" fxLayout="row" fxLayoutAlign="space-around center">
-    <div  fxFlex.lg="50%" fxFlex.xs="50%">
+   
+    <div fxFlex.lg="10%" fxFlex.md="13%" fxFlex.sm="10%" fxFlex.xs="30%" fxFlex.xl="4" fxLayout="row" fxLayoutAlign="space-around center">
+    <div  fxFlex.lg="50%" fxFlex.xs="50%" fxFlex.xl="4">
       <i class="material-icons" matTooltip="List View" style="cursor:pointer"
        (click)="viewToggle()" *ngIf="gridObj == 0" fxShow = "true" fxHide.sm = "true"
-       fxHide.xs = "true">view_stream</i>
+       fxHide.xs = "true" >view_stream</i>
       <i class="material-icons" matTooltip="Grid View" style="cursor:pointer"
        (click)="view()" *ngIf="gridObj == 1" fxShow = "true" fxHide.sm = "true"
        fxHide.xs = "true">view_module</i>
     </div>
 
 
-<!-- 
-    <div fxFlex.lg="13%" fxFlex.md="13%" fxFlex.sm="10%" fxFlex.xs="30%" fxLayout="row" fxLayoutAlign="space-around center">
-        <div fxFlex.lg="50%" fxFlex.xs="50%">
-          <div class="icons">
-            <button mat-icon-button matTooltip="listView" (click)="cardsInList()" *ngIf="grid == 0">
-              <mat-icon>view_stream</mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="gridView" (click)="cardsInGrid()" *ngIf="grid == 1">
-              <mat-icon>apps</mat-icon>
-            </button>
-          </div>
-        </div> -->
-
-
 
     <!--------------------------------------------------------------------------->
     <!-- ********************* Profile Pic Menu *********************** -->
-    <div fxFlex.lg="50%" fxFlex.xs="50%" >
+    <div fxFlex.lg="50%" fxFlex.xs="50%" fxFlex.xl="40">
       <button *ngIf="image2!=''" class="profilebutton" [matMenuTriggerFor]="appMenu" matTooltip="{{firstName}} {{lastName}}"
         style="background:#fb0"><img src="{{img}}" class="profileImage"></button>
       <button *ngIf="image2==''" class="profilebutton" mat-mini-fab [matMenuTriggerFor]="appMenu" matTooltip="{{firstName}} {{lastName}}"
@@ -184,18 +166,3 @@
 
 
 
-
-<!-----------------------------------small search bar ------------------------------------->
-
-<!-- <div>
-        <div>
-        <mat-icon class="icon" (click)="navigate()">search</mat-icon>
-        </div>
-        <div>
-            <input class="searchBox"  [(ngModel)]="globalSearch" 
-            (keydown)="keySearch()"  
-            placeholder="Search" autocomplete='on'>
-        </div>
-        </div> -->
-
-<!------------------------------small search bar ------------------------------------------>

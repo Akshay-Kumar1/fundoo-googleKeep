@@ -25,20 +25,31 @@
     margin-left:4px;
 }
 
-.grid
+.gridView
 {
-    width: 300px;
+    transition-property: transform;
+    width: 290px;
+    margin-left: 12px;
+  
 }
-.list
+.top-border
+{
+    margin-top:8px;
+    border-radius: 9px;
+}
+
+.listView
 {
     width: 800px;
 }
 
 .hider
 {
-    margin-left: 24px;
-    opacity:$zeroOpacity;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  opacity:$zeroOpacity;
 }
+   
 .hider:hover
 {
     opacity:$oneOpacity;
@@ -63,12 +74,137 @@
     text-overflow:ellipsis;
 }
 
-.margin-left-top
+.topSpace
 {
-    margin-left:10%;
-    margin-top:20px;
+    margin-top:25px;
 }
 .collaborators
 {
     margin-left: 3%;
+}
+
+
+
+
+//***************************************************************************************
+@media only screen and (min-width: 860px) and (max-width: 980px)
+{
+    .listView
+{
+    width:800px;
+}
+}
+@media only screen and (min-width: 800px) and (max-width: 860px)
+{
+    .listView
+{
+    width:800px;
+}
+}
+@media only screen and (min-width: 747px) and (max-width: 803px)
+{
+    .listView
+{
+    width:750px;
+}
+}
+@media only screen and (min-width: 720px) and (max-width: 746px)
+{
+    .listView
+{
+    width:700px;
+}
+}
+@media only screen and (min-width: 664px) and (max-width: 719px)
+{
+    .listView
+{
+    width:650px;
+}
+}
+@media only screen and (min-width: 646px) and (max-width: 665px)
+{
+    .listView
+{
+    width:600px;
+}
+}
+@media only screen and (min-width: 615px) and (max-width: 645px)
+{
+    .listView
+{
+    width:520px;
+}
+}
+@media only screen and (min-width: 519px) and (max-width: 614px)
+{
+    .listView
+{
+    width:400px;
+}
+}
+@media only screen and (min-width: 369px) and (max-width: 518px)
+{
+    .listView
+{
+
+    width:350px;
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 368px)
+{
+    .listView
+{
+    width:300px;
+}
+}
+
+//********************************************************************************8
+@media only screen and (min-width: 506px) and (max-width: 649px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:460px;
+}
+}
+@media only screen and (min-width: 435px) and (max-width: 505px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:420px;
+}
+}
+@media only screen and (min-width: 391px) and (max-width: 434px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:380px;
+}
+}
+@media only screen and (min-width: 391px) and (max-width: 434px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:380px;
+}
+}
+@media only screen and (min-width: 349px) and (max-width: 390px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:330px;
+}
+}
+@media only screen and (min-width: 310px) and (max-width: 348px)
+{
+    .gridView
+{
+    margin-top: 20px;
+    width:300px;
+}
 }

@@ -1,9 +1,12 @@
 <!-- ********************* Saved Cards ******************* -->
-<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px"
-class="margin-left-top">
-    <div *ngFor="let content of cardsArr | filterLabel:globalSearch trackBy:val?.id ">
-        <div [ngClass]="{'grid':!toggle,'list':toggle}">
-            <mat-card style="margin-top:10px" class="card" fxFlex
+<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="18px"
+class="topSpace">
+<div  fxLayout = "row wrap"  fxFlex.xl = 9 fxFlex.xs = 0 fxFlex.sm = 0 fxFlex.md = 4 fxFlex.lg = 4></div>
+<div fxLayout = "row wrap" fxFlex.xs = 100 fxFlex.sm = 100 fxFlex.md = 85
+   fxFlex.lg = 80 fxFlex.xl = 75 >    
+<div *ngFor="let content of cardsArr | filterLabel:globalSearch trackBy:val?.id ">
+        <div [ngClass]="{'gridView':!toggle,'listView':toggle}">
+            <mat-card class="top-border"
             [style.backgroundColor]="content.color">
             <div style="float:right">
             <!-- ********************* Pin / Unpin Notes ******************* -->
@@ -43,7 +46,7 @@ class="margin-left-top">
                         <mat-chip class="chipStyle" *ngIf="index.isDeleted==false">
                         <b style="float:left" routerLink="/homepage/labels/{{index.label}}">{{index.label}}</b>
                         <div style="float:right">
-                        <mat-icon class="hider" (click)="removeLabelTag(content.id,index.id)" 
+                        <mat-icon class="hider" matChipRemove (click)="removeLabelTag(content.id,index.id)" 
                         style="cursor:pointer">cancel</mat-icon>
                         </div>
                         </mat-chip>
@@ -158,4 +161,6 @@ class="margin-left-top">
             </mat-card>
         </div>
     </div>
+</div>
+<div fxLayout = "row" fxFlex.xs = 0 fxFlex.sm = 0 fxFlex.md = 5 fxFlex.lg = 5 fxFlex.xl = 10 ></div>
 </div>
